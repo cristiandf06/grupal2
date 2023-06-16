@@ -14,7 +14,8 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class Login
  */
-public class Login extends HttpServlet {
+@WebServlet("/procesarUsuario")
+public class Usuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private final String USUARIO = "usuario";
@@ -26,7 +27,7 @@ public class Login extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Usuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -54,9 +55,10 @@ public class Login extends HttpServlet {
 			out.println("location='index.jsp';");
 			out.println("<script>");
 		}else {
+			//creamos la sesion si el usuario existe
 			HttpSession sesion = request.getSession(true);
 			sesion.setAttribute("usuario", usuario);
-			RequestDispatcher rd = request.getRequestDispatcher("capacitacion.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("Capacitacion.jsp");
 			rd.forward(request, response);
 		}
 		

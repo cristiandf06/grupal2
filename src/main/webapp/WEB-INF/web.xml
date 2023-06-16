@@ -19,4 +19,14 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProcesarCapacitacion</display-name>
+    <servlet-name>ProcesarCapacitacion</servlet-name>
+    <servlet-class>controller.ProcesarCapacitacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProcesarCapacitacion</servlet-name>
+    <url-pattern>/ProcesarCapacitacion</url-pattern>
+  </servlet-mapping>
 </web-app>
